@@ -1,19 +1,47 @@
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:layout_margin="16dp"
-    android:background="#BBBBBB"
+    android:background="@color/orange_500"
+    android:gravity="center_vertical"
     android:orientation="vertical"
     android:padding="16dp">
 
     <TextView
-        android:layout_width="wrap_content"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="Bonjour, " />
+        android:gravity="center_horizontal"
+        android:text="@string/city_name"
+        android:textColor="@color/white"
+        android:textSize="24sp" />
 
     <TextView
-        android:layout_width="wrap_content"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="tout le monde !!!" />
+        android:gravity="center_horizontal"
+        android:text="@string/city_desc"
+        android:textColor="@color/white"
+        android:textSize="16sp" />
 
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center_vertical">
+
+        <ImageView
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:contentDescription="@string/placeholder"
+            android:padding="16dp"
+            android:src="@drawable/weather_sunny_white" />
+
+        <TextView
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:gravity="center|end"
+            android:text="@string/city_temp"
+            android:textColor="@color/white"
+            android:textSize="32sp" />
+    </LinearLayout>
 </LinearLayout>
