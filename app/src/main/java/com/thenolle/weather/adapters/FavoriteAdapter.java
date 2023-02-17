@@ -14,30 +14,31 @@ import com.thenolle.weather.R;
 import com.thenolle.weather.models.City;
 
 import java.util.ArrayList;
+import java.util.List;
 
 public class FavoriteAdapter extends RecyclerView.Adapter<FavoriteAdapter.ViewHolder> {
-    private final Context mContext;
-    private final ArrayList<City> mCities;
+    private final LayoutInflater mInflater;
+    private List<City> mCities;
 
-    public FavoriteAdapter(Context context, ArrayList<City> cities) {
-        mContext = context;
-        mCities = cities;
+    public FavoriteAdapter(Context context, List<City> cities) {
+        this.mInflater = LayoutInflater.from(context);
+        this.mCities = cities;
     }
 
+    @NonNull
     @Override
     public ViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
-        View v = LayoutInflater.from(mContext).inflate(R.layout.item_favorite_city, parent, false);
-        ViewHolder viewHolder = new ViewHolder(v);
-        return viewHolder;
+        View view = mInflater.inflate(R.layout.item_favorite_city, parent, false);
+        return new ViewHolder(view);
     }
 
     @Override
     public void onBindViewHolder(@NonNull ViewHolder holder, int position) {
         City city = mCities.get(position);
-        holder.mTextViewCityName.setText(city.mName);
-        holder.mTextViewCityDesc.setText(city.mDescription);
-        holder.mImageViewWeatherIcon.setImageResource(city.mWeatherIcon);
-        holder.mTextViewTemperature.setText(String.valueOf(city.mTemperature));
+        holder.cityName.setText(city.mName);
+        holder.cityDescription.setText(city.mDescription);
+        holder.cityTemperature.setText(city.mTemperature);
+        holder.cityIcon.setImageResource(city.mWeatherIcon);
     }
 
     @Override
@@ -45,18 +46,22 @@ public class FavoriteAdapter extends RecyclerView.Adapter<FavoriteAdapter.ViewHo
         return mCities.size();
     }
 
-    public class ViewHolder extends RecyclerView.ViewHolder {
-        public TextView mTextViewCityName;
-        public TextView mTextViewCityDesc;
-        public ImageView mImageViewWeatherIcon;
-        public TextView mTextViewTemperature;
+    public void submitList(ArrayList<City> cities) {
+        mCities = cities;
+    }
 
-        public ViewHolder(@NonNull View itemView) {
+    public static class ViewHolder extends RecyclerView.ViewHolder {
+        TextView cityName;
+        TextView cityDescription;
+        TextView cityTemperature;
+        ImageView cityIcon;
+
+        ViewHolder(View itemView) {
             super(itemView);
-            mTextViewCityName = itemView.findViewById(R.id.item_weather_name);
-            mTextViewCityDesc = itemView.findViewById(R.id.item_weather_desc);
-            mImageViewWeatherIcon = itemView.findViewById(R.id.item_weather_icon);
-            mTextViewTemperature = itemView.findViewById(R.id.item_weather_temperature);
+            cityName = itemView.findViewById(R.id.item_weather_name);
+            cityDescription = itemView.findViewById(R.id.item_weather_desc);
+            cityTemperature = itemView.findViewById(R.id.item_weather_temperature);
+            cityIcon = itemView.findViewById(R.id.item_weather_icon);
         }
     }
 }

@@ -1,0 +1,7 @@
+<EditText xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/favorite_popup_city"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:hint="@string/placeholder"
+    android:autofillHints="name"
+    android:inputType="text" />
