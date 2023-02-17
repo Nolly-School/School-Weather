@@ -8,4 +8,9 @@
     <dimen name="text_size_description">18sp</dimen>
     <dimen name="icon_size">48dp</dimen>
     <dimen name="text_size_temp">48sp</dimen>
+
+    <dimen name="no_internet_connection">32sp</dimen>
+
+    <dimen name="favorite_appbarlayout">180dp</dimen>
+    <dimen name="favorite_icon_margin">16dp</dimen>
 </resources>

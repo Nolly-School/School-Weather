@@ -4,6 +4,7 @@
     android:layout_height="match_parent">
 
     <LinearLayout
+        android:id="@+id/weather_layout"
         android:layout_width="match_parent"
         android:layout_height="250dp"
         android:background="@color/orange_500"
@@ -17,16 +18,16 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:gravity="center"
-            android:text="@string/city_name"
+            android:text="@string/weather_name"
             android:textColor="@color/white"
             android:textSize="@dimen/text_size_title" />
 
         <TextView
-            android:id="@+id/weather_desc"
+            android:id="@+id/weather_description"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:gravity="center_horizontal"
-            android:text="@string/city_desc"
+            android:text="@string/weather_desc"
             android:textColor="@color/white"
             android:textSize="@dimen/text_size_description" />
 
@@ -38,17 +39,19 @@
             tools:ignore="UseCompoundDrawables">
 
             <ImageView
+                android:id="@+id/weather_icon"
                 android:layout_width="wrap_content"
                 android:layout_height="match_parent"
                 android:contentDescription="@string/placeholder"
                 android:src="@drawable/weather_sunny_white" />
 
             <TextView
+                android:id="@+id/weather_temperature"
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
                 android:gravity="center|end"
-                android:text="@string/city_temp"
+                android:text="@string/weather_temp"
                 android:textColor="@color/white"
                 android:textSize="@dimen/text_size_temp" />
 
@@ -64,5 +67,24 @@
         android:layout_alignParentBottom="true"
         android:layout_margin="@dimen/button_margin"
         android:text="@string/favorite_button" />
+
+    <EditText
+        android:id="@+id/send_message"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerInParent="true"
+        android:hint="@string/placeholder"
+        android:inputType="text"
+        android:autofillHints="name" />
+
+    <TextView
+        android:id="@+id/no_internet_connection"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerInParent="true"
+        android:gravity="center"
+        android:text="@string/no_internet_connection"
+        android:textSize="@dimen/no_internet_connection"
+        android:visibility="gone" />
 
 </RelativeLayout>

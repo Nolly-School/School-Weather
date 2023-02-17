@@ -3,9 +3,11 @@
 
     <string name="placeholder">Placeholder</string>
 
-    <string name="city_name">New York</string>
-    <string name="city_desc">Ensoleillé</string>
-    <string name="city_temp">24°C</string>
+    <string name="weather_name">New York</string>
+    <string name="weather_desc">Ensoleillé</string>
+    <string name="weather_temp">24°C</string>
 
     <string name="favorite_button">Favoris</string>
+
+    <string name="no_internet_connection">Pas de Connexion Internet</string>
 </resources>
