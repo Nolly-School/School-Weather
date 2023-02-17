@@ -39,6 +39,14 @@
         app:layout_behavior="@string/appbar_scrolling_view_behavior"
         tools:context=".ScrollingActivity">
 
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/favorite_recycle_view"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical"
+            app:layout_behavior="@string/appbar_scrolling_view_behavior"
+            tools:showIn="@layout/activity_favorite" />
+
     </androidx.core.widget.NestedScrollView>
 
     <com.google.android.material.floatingactionbutton.FloatingActionButton
@@ -47,6 +55,7 @@
         android:layout_height="wrap_content"
         android:layout_marginEnd="@dimen/favorite_icon_margin"
         android:contentDescription="@string/placeholder"
+        app:fabSize="auto"
         app:layout_anchor="@id/app_bar"
         app:layout_anchorGravity="bottom|end"
         app:srcCompat="@drawable/ic_search" />
