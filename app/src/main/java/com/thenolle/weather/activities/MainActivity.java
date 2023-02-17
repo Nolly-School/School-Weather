@@ -1,4 +1,4 @@
-package com.thenolle.weather;
+package com.thenolle.weather.activities;
 
 import android.app.Application;
 import android.content.Intent;
@@ -9,10 +9,10 @@ import android.widget.EditText;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.TextView;
-import android.widget.Toast;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import com.thenolle.weather.R;
 import com.thenolle.weather.functions.Utils;
 
 public class MainActivity extends AppCompatActivity {
@@ -22,7 +22,6 @@ public class MainActivity extends AppCompatActivity {
     private ImageView mWeatherIcon;
     private TextView mWeatherTemp;
     private Button mFavoriteButton;
-    private EditText mSendMessage;
     private TextView mNoInternetConnection;
 
     @Override
@@ -36,7 +35,6 @@ public class MainActivity extends AppCompatActivity {
         mWeatherIcon = findViewById(R.id.weather_icon);
         mWeatherTemp = findViewById(R.id.weather_temperature);
         mFavoriteButton = findViewById(R.id.favorite_button);
-        mSendMessage = findViewById(R.id.send_message);
         mNoInternetConnection = findViewById(R.id.no_internet_connection);
 
         Application application = getApplication();
@@ -48,11 +46,9 @@ public class MainActivity extends AppCompatActivity {
             mWeatherIcon.setImageResource(R.drawable.weather_sunny_white);
             mWeatherTemp.setText(R.string.weather_temp);
             mFavoriteButton.setText(R.string.favorite_button);
-            mSendMessage.setHint(R.string.placeholder);
 
             mFavoriteButton.setOnClickListener(v -> {
                 Intent intent = new Intent(MainActivity.this, FavoriteActivity.class);
-                intent.putExtra(Utils.Keys.MESSAGE_KEY, mSendMessage.getText().toString());
                 startActivity(intent);
             });
 

@@ -1,4 +1,4 @@
-package com.thenolle.weather;
+package com.thenolle.weather.activities;
 
 import android.content.Intent;
 import android.os.Bundle;
@@ -8,12 +8,19 @@ import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.Toolbar;
 
 import com.google.android.material.appbar.CollapsingToolbarLayout;
+import com.thenolle.weather.R;
 import com.thenolle.weather.databinding.ActivityFavoriteBinding;
 import com.thenolle.weather.functions.Utils;
+import com.thenolle.weather.models.City;
+
+import java.util.ArrayList;
 
 public class FavoriteActivity extends AppCompatActivity {
     private ActivityFavoriteBinding binding;
     private TextView messageTextView;
+
+    private Intent intent = getIntent();
+    private ArrayList<City> mCities;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -27,11 +34,16 @@ public class FavoriteActivity extends AppCompatActivity {
         CollapsingToolbarLayout toolBarLayout = binding.toolbarLayout;
         toolBarLayout.setTitle(getTitle());
 
-        Intent intent = getIntent();
-        String message = "Message: " + intent.getStringExtra(Utils.Keys.MESSAGE_KEY);
+        mCities = new ArrayList<>();
 
-        messageTextView = findViewById(R.id.favorite_message);
+        City city1 = new City("Montréal", "Légères pluies", R.drawable.weather_rainy_grey, "22°C");
+        City city2 = new City("New York", "Ensoleillé", R.drawable.weather_sunny_grey, "22°C");
+        City city3 = new City("Paris", "Nuageux", R.drawable.weather_foggy_grey, "24°C");
+        City city4 = new City("Toulouse", "Pluies modérées", R.drawable.weather_rainy_grey, "20°C");
 
-        messageTextView.setText(message);
+        mCities.add(city1);
+        mCities.add(city2);
+        mCities.add(city3);
+        mCities.add(city4);
     }
 }

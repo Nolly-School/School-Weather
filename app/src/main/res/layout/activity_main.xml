@@ -68,15 +68,6 @@
         android:layout_margin="@dimen/button_margin"
         android:text="@string/favorite_button" />
 
-    <EditText
-        android:id="@+id/send_message"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_centerInParent="true"
-        android:hint="@string/placeholder"
-        android:inputType="text"
-        android:autofillHints="name" />
-
     <TextView
         android:id="@+id/no_internet_connection"
         android:layout_width="wrap_content"
